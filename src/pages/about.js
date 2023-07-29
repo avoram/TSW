@@ -1,15 +1,20 @@
-import * as React from 'react'
-import Layout from '../components/layout'
-import Seo from '../components/seo'
+
+// src/pages/about.js
+import React from 'react';
+import Layout from '../components/layout/Layout';
 
 const AboutPage = () => {
   return (
-    <Layout pageTitle="About Me">
-      <p>Hi there! I'm the proud creator of this site, which I built with Gatsby.</p>
+    <Layout>
+     <div>
+      <h1>About Us</h1>
+      <p>
+        Add some information about your architect firm and what you specialize
+        in.
+      </p>
+    </div>
     </Layout>
-  )
-}
+  );
+};
 
-export const Head = () => <Seo title="About Me" />
-
-export default AboutPage
+export default AboutPage;

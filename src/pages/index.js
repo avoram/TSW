@@ -1,20 +1,26 @@
-import * as React from 'react'
-import Layout from '../components/layout'
+// src/pages/index.js
+import React from 'react';
+import * as styles from './index.module.css';
 import { StaticImage } from 'gatsby-plugin-image'
-import Seo from '../components/seo'
+import Layout from '../components/layout/Layout';
 
-const IndexPage = () => {
+const HomePage = () => {
   return (
-    <Layout pageTitle="Home Page">
-      <p>I'm making this by following the Gatsby Tutorial.</p>
-      <StaticImage
-        alt="Gatsby Icon"
-        src="../images/icon.png"
-      />
+    <Layout>
+      <div className={styles.homepageWrapper}>
+        <StaticImage
+          alt="TSW Logo"
+          src="../images/tsw.png"
+        />
+      </div>
+      <section id="portfolio">
+        portfolio Here
+        <br/>
+        <br/>
+        Try this
+      </section>
     </Layout>
-  )
-}
+  );
+};
 
-export const Head = () => <Seo title="Home Page" />
-
-export default IndexPage
+export default HomePage;

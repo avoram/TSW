@@ -10,11 +10,11 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-plugin-scroll-reveal`,
       options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
-      }
-    },
+        threshold: 0.1, // Adjust the threshold for reveal (percentage of element in view)
+        once: true, // Only reveal elements once
+      },
+    }
   ],
 }
