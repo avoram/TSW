@@ -1,0 +1,132 @@
+/* src/components/ContactForm.module.css */
+.contactFormContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.tswLogo {
+    margin-top: 1rem;
+}
+
+.contactInfo {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line if space is not enough */
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.contactItem {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Take full available width */
+}
+
+.contactItem span {
+    font-weight: bold;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.formRow {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    /* Align items at the start of the flex container */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line if space is not enough */
+}
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Take full available width */
+}
+
+.formRow input,
+.formRow textarea {
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.formRow textarea {
+    resize: vertical;
+}
+
+.formRowMessage {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Take full available width */
+}
+
+.formRowMessage label {
+    width: 120px;
+}
+
+.formRowMessage textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin: 1rem 0;
+}
+
+.submitButton {
+    align-self: flex-end;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 20%;
+}
+
+.submitButton:hover {
+    background-color: #555;
+}
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.boldText {
+    font-weight: bold;
+}
+
+/* Add this style to align logo with other text */
+.flexStart {
+    align-self: flex-start;
+    /* Align the logo to the start (left) of the flex container */
+}
+
+.contactInfo {
+    display: flex;
+    /* Add this to make the children align horizontally */
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+    /* Add this to center the logo vertically with the text */
+}
+.connectText {
+    font-size: 1.875rem;
+}
