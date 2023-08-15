@@ -15,6 +15,13 @@ module.exports = {
         threshold: 0.1, // Adjust the threshold for reveal (percentage of element in view)
         once: true, // Only reveal elements once
       },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: 'u8k0c4tvr5ci',
+        accessToken: '4FpqRjTkJQhTsAkZsEr5f75tFIf5Lb2cYkzt-tBgqO0',
+      },
     }
   ],
 }

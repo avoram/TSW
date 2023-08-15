@@ -1,0 +1,45 @@
+/* about.module.css */
+.aboutWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    /* Center text within the wrapper */
+}
+
+.leftSide {
+    padding-right: 0;
+    /* Remove padding on the left side */
+    margin-bottom: 1rem;
+    /* Add some space between the sides */
+}
+
+.rightSide {
+    /* Remove padding on the right side */
+    flex: 1;
+    /* Allow the right side to take available space */
+    max-width: 400px;
+    /* Set a maximum width */
+    padding-left: 2rem;
+    text-align: left;
+    /* Align text to the left within the fixed width */
+}
+
+@media (min-width: 768px) {
+    .aboutWrapper {
+        flex-direction: row;
+        /* Arrange content side by side on larger screens */
+    }
+
+    .leftSide {
+        padding-right: 10%;
+        margin-bottom: 0;
+        /* Remove the space between the sides */
+    }
+
+    .rightSide {
+        flex: 1;
+        padding-left: 2rem;
+      }
+}

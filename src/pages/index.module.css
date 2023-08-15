@@ -11,3 +11,70 @@
     max-height: 100%;
   }
   
+  .portfolioContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .categoryCard {
+    width: 100%; /* Set the card width to 70% of the container */
+    margin: 0 auto; /* Center-align the card */
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Hide any overflowing content */
+    padding: 0 10%;
+  }
+  
+  .categoryImage {
+    flex: 1; /* Set the image to take 50% of the card width */
+    object-fit: cover; /* Preserve the aspect ratio and crop the image if needed */
+    max-width: 40%; /* Limit the maximum width of the image */
+    height: auto; /* Automatically adjust the height while maintaining the aspect ratio */
+  }
+  
+  .categoryContent {
+    flex: 1; /* Set the content to take 50% of the card width */
+    padding: 6rem 8rem;
+  }
+  
+  .categoryContent h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .categoryContent p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .categoryContent a {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .categoryContent a:hover {
+    background-color: #555;
+  }
+
+  .portfolioHeader {
+    font-size: 3rem;
+    padding-left: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+
+  nav ul li.active {
+    /* Styles to highlight the active tab in the header */
+    font-weight: bold;
+    /* ... */
+  }
+
+  .viewProjectButton {
+    margin-top: 1rem;
+}
