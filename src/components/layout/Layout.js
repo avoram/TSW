@@ -4,7 +4,7 @@ import * as styles from './Layout.module.css';
 import Scroll from 'react-scroll';
 import { useLocation } from '@reach/router';
 
-const Layout = ({ children, logoClicked }) => { // Receive the logoClicked state as a prop
+const Layout = ({ children, logoClicked }) => {
   const [activeLink, setActiveLink] = useState('');
   const [tswLogoClicked, setTswLogoClicked] = useState(false);
   const location = useLocation();
@@ -38,21 +38,19 @@ const Layout = ({ children, logoClicked }) => { // Receive the logoClicked state
         <nav className={styles.navLinks}>
           <Link
             to="/"
-            className={`${activeLink === 'home' && activeLink !== 'portfolio' ? styles.activeLink : ''}`}
+            getProps={({ isCurrent }) => (isCurrent ? { className: styles.activeLink } : {})}
             onClick={() => setActiveLink('home')}
           >
             Home
           </Link>
           <Link
-            to="/#portfolio"
-            className={`${styles.portfolioLink} ${activeLink === 'portfolio' && (!tswLogoClicked || logoClicked) ? styles.activePortfolioLink : ''}`}
-            onClick={() => {
-              setActiveLink('portfolio');
-              setTswLogoClicked(false);
-            }}
+            to="/portfolio"
+            getProps={({ isCurrent }) => (isCurrent ? { className: styles.activeLink } : {})}
+            onClick={() => setActiveLink('portfolio')}
           >
             Portfolio
           </Link>
+
           <Link
             to="/about"
             getProps={({ isCurrent }) => (isCurrent ? { className: styles.activeLink } : {})}
@@ -70,6 +68,10 @@ const Layout = ({ children, logoClicked }) => { // Receive the logoClicked state
         </nav>
       </header>
       <div className={styles.content}>{children}</div>
+      <footer className={styles.footer}>
+        {/* Add your footer content here */}
+        <p>&copy; {new Date().getFullYear()} TSW. All rights reserved.</p>
+      </footer>
     </>
   );
 };

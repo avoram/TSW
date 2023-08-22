@@ -15,6 +15,7 @@
   justify-content: flex-end;
   align-items: center;
   padding-right: 1rem; /* Add right padding to create space from right */
+  height: 30px;
 }
 
 .navLinks {
@@ -49,7 +50,9 @@
 
 .content {
   /* Existing styles for the content */
-  padding-top: 80px; /* Adjust the value to match the fixed header's height */
+  /* Adjust the value to match the fixed header's height */
+  height: calc(100vh - 114px); /* header + footer height = 114px*/
+  margin-top: 62px; /* This is exact height of header*/
 }
 
 .portfolioLink {
@@ -71,3 +74,24 @@
   background-color: rgba(255, 255, 255, 0.2);
   /* Add any other styles you want for the active "Portfolio" link */
 }
+
+/* ... (existing styles for header and navigation) */
+
+.footer {
+  /* Styles for the footer */
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ... (existing styles for content and portfolio link) */

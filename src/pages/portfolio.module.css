@@ -1,0 +1,62 @@
+/* src/pages/portfolio.module.css */
+.portfolioContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem 0; /* Add some padding to maintain spacing */
+  }
+  
+  .categoryCard {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 10%;
+  }
+  
+  .categoryImage {
+    flex: 1;
+    object-fit: cover;
+    max-width: 40%;
+    height: auto;
+  }
+  
+  .categoryContent {
+    flex: 1;
+    padding: 2rem 2rem; /* Adjust padding for smaller screens */
+  }
+  
+  .categoryContent h2 {
+    font-size: 1.5rem; /* Decrease font size for smaller screens */
+    margin-bottom: 0.5rem;
+  }
+  
+  .categoryContent p {
+    font-size: 1rem; /* Decrease font size for smaller screens */
+    margin-bottom: 1rem;
+  }
+  
+  /* ... (existing styles for links and buttons) */
+  
+  .portfolioHeader {
+    font-size: 2rem; /* Decrease font size for smaller screens */
+    padding: 0 10%; /* Adjust padding for smaller screens */
+  }
+
+  .portfolioSection {
+    margin-top: 80px;
+  }
+  
+  /* Add a media query for smaller screens */
+  @media (max-width: 768px) {
+    .portfolioContainer {
+      padding: 2rem; /* Maintain the same padding for consistency */
+    }
+  
+    .categoryCard {
+      padding: 0 5%; /* Adjust padding for smaller screens */
+    }
+  }
+  
