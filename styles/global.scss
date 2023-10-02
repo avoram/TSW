@@ -1,0 +1,14 @@
+/* In global.css or global.scss */
+@import url('https://fonts.googleapis.com/css?family=Playfair Display:300,400,500,700&display=swap');
+
+:root {
+    --base-font-color: #5a5856; 
+    /* Change this color code to your desired font color */
+}
+
+/* Apply the font to the entire body */
+body {
+    font-family: 'Playfair Display', sans-serif; // Roboto, Lato, Playfair Display
+    color: var(--base-font-color);
+}
+

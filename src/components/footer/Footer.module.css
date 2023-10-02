@@ -1,0 +1,12 @@
+/* src/components/Footer.module.css */
+.footer {
+    /* Your custom footer styles here */
+    background-color: var(--base-font-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer p {
+    margin: 0;
+}

@@ -8,6 +8,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-image",
+    'gatsby-plugin-sass',
     "gatsby-plugin-sharp",
     {
       resolve: `gatsby-plugin-scroll-reveal`,

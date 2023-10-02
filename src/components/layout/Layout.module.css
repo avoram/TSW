@@ -1,7 +1,7 @@
 /* src/components/Layout.module.css */
 .header {
   /* Existing styles for the header, such as background, padding, etc. */
-  background-color: #333;
+  background-color: var(--base-font-color);;
   color: white;
   padding: 1rem;
 
@@ -14,7 +14,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 1rem; /* Add right padding to create space from right */
+  padding-right: 1rem;
+  /* Add right padding to create space from right */
   height: 30px;
 }
 
@@ -22,6 +23,7 @@
   /* New style to align links to the right */
   display: flex;
   gap: 1rem;
+  position: relative;
 }
 
 .navLinks a {
@@ -51,8 +53,10 @@
 .content {
   /* Existing styles for the content */
   /* Adjust the value to match the fixed header's height */
-  height: calc(100vh - 114px); /* header + footer height = 114px*/
-  margin-top: 62px; /* This is exact height of header*/
+  height: calc(100vh - 114px);
+  /* header + footer height = 114px*/
+  margin-top: 62px;
+  /* This is exact height of header*/
 }
 
 .portfolioLink {
@@ -75,23 +79,28 @@
   /* Add any other styles you want for the active "Portfolio" link */
 }
 
-/* ... (existing styles for header and navigation) */
+/* src/components/Layout.module.css */
+/* ... (existing styles) */
 
-.footer {
-  /* Styles for the footer */
-  background-color: #333;
+.submenu {
+  position: absolute;
+  background-color: var(--base-font-color);;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  padding: 8px;
+  width: 140px;
+  z-index: 1001;
+}
+
+.submenuItem {
   color: white;
-  text-align: center;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 20px;
+  text-decoration: none;
+  padding: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.footer p {
-  margin: 0;
+.submenuItem:hover {
+  background-color: rgba(255, 255, 255, 0.4);
 }
-
-/* ... (existing styles for content and portfolio link) */

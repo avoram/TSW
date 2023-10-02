@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
+import '../../../styles/global.scss';
 import * as styles from './Layout.module.css';
 import Scroll from 'react-scroll';
 import { useLocation } from '@reach/router';
+import Footer from '../footer/Footer'; 
 
 const Layout = ({ children, logoClicked }) => {
   const [activeLink, setActiveLink] = useState('');
@@ -32,6 +34,9 @@ const Layout = ({ children, logoClicked }) => {
     }, 100);
   }, [location.pathname]);
 
+  // Check if the current page is the portfolio page
+  const isPortfolioPage = location.pathname === '/portfolio/';
+
   return (
     <>
       <header className={styles.header}>
@@ -45,11 +50,25 @@ const Layout = ({ children, logoClicked }) => {
           </Link>
           <Link
             to="/portfolio"
-            getProps={({ isCurrent }) => (isCurrent ? { className: styles.activeLink } : {})}
-            onClick={() => setActiveLink('portfolio')}
+            onMouseEnter={() => setActiveLink('portfolio')}
+            onMouseLeave={() => setActiveLink('')}
           >
             Portfolio
+            {activeLink === 'portfolio' && (
+              <div className={styles.submenu}>
+                <Link to="/portfolio/residential" className={styles.submenuItem}>
+                  Residential
+                </Link>
+                <Link to="/portfolio/commercial" className={styles.submenuItem}>
+                  Commercial
+                </Link>
+                <Link to="/portfolio/resort" className={styles.submenuItem}>
+                  Resort
+                </Link>
+              </div>
+            )}
           </Link>
+
 
           <Link
             to="/about"
@@ -68,11 +87,11 @@ const Layout = ({ children, logoClicked }) => {
         </nav>
       </header>
       <div className={styles.content}>{children}</div>
-      <footer className={styles.footer}>
-        {/* Add your footer content here */}
-        <p>&copy; {new Date().getFullYear()} TSW. All rights reserved.</p>
-      </footer>
-    </>
+      {/* Conditionally render the footer */}
+      {!isPortfolioPage && (
+       <Footer></Footer>
+      )}
+   </>
   );
 };
 

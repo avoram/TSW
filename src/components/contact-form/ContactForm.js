@@ -3,9 +3,26 @@ import * as styles from './ContactForm.module.css';
 import { StaticImage } from 'gatsby-plugin-image';
 import LinkedInIcon from '../../images/linkedin.svg';
 import InstagramIcon from '../../images/instagram.svg';
+import Button from '../button/Button';
 
 
 const ContactForm = () => {
+    const handleContactFormSubmit = (e) => {
+        e.preventDefault();
+
+        // Here, you can perform actions with the formData, such as sending it to a server or displaying it.
+        // For example, you can send it to an API using Axios or fetch:
+        // axios.post('/api/contact', formData)
+        //   .then((response) => {
+        //     console.log('Form submitted successfully', response.data);
+        //   })
+        //   .catch((error) => {
+        //     console.error('Form submission failed', error);
+        //   });
+
+        // For this example, let's just log the form data to the console.
+        console.log('Form submitted:');
+    };
     return (
         <div className={styles.contactFormContainer}>
             <div className={styles.flexStart}>
@@ -64,9 +81,7 @@ const ContactForm = () => {
                     <textarea id="message" name="message" rows="6" required />
                 </div>
                 {/* Submit Button */}
-                <button type="submit" className={styles.submitButton}>
-                    Send
-                </button>
+                <Button text="Submit" onClick={handleContactFormSubmit} />
             </form>
         </div>
     );
