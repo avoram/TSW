@@ -19,7 +19,7 @@
 .categoryImage {
   flex: 1;
   object-fit: cover;
-  max-width: 60%;
+  max-width: 50%;
   height: auto;
   border-radius: 10px;
 }

@@ -45,7 +45,7 @@ const PortfolioPage = () => {
                   <h2>{category.title}</h2>
                   <p>{category.description.description}</p>
                   <Link to="/#view-project" className={`${styles.viewProjectButton} ${styles.button}`}>
-                    View Project
+                    Explore Project
                   </Link>
                 </div>
                 {/* Add the separator line */}
