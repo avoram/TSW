@@ -33,7 +33,13 @@
 
     Edit `src/pages/index.js` to see your site update in real-time!
 
-4.  **Learn more**
+4. **How Deployment works for TSW**
+
+    When we push changes to the TSW `main` branch, Netlify runs the build automatically and deploys to [twinstudioworks.in](https://twinstudioworks.in).
+    
+    [TSW Netlify](https://app.netlify.com/teams/avoram/overview)
+
+5.  **Learn more**
 
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
     - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
