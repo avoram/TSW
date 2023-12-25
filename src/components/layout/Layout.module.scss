@@ -1,0 +1,128 @@
+@import "../../../styles/global.scss";
+
+.header {
+  background-color: var(--base-font-color);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; // Vertically center the content of the header
+  height: 100px;
+  border: 1px solid #baa170;
+
+  .logoLink {
+    .logoContainer {
+      .logoImage {
+        max-height: 100%; // Ensures the image is contained within the parent div
+        width: 70%; // Maintain aspect ratio
+      }
+    }
+  }
+
+  .navLinks {
+    height: 100%; // Make sure the container stretches full height
+    display: flex;
+    align-items: center; // Align the links vertically
+
+    a {
+      color: #baa170;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 0rem 2.5rem;
+      transition: background-color 0.3s ease;
+      display: flex; // Align text within link vertically
+      align-items: center; // Align text within link vertically
+      border-top: none;
+      border-bottom: none;
+      border-left: 1px solid #baa170;
+      height: 100%; // Stretch the links full height for the border
+      position: relative;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      &:last-child {
+        border-left: 1px solid #baa170; // Keep left border for the last item
+        border-right: 1px solid #baa170; // Add right border for the last item
+      }
+
+      // Targeting the second link which is assumed to be Portfolio
+      &:nth-child(2) {
+        // ... existing styles for 'a'
+
+        // Insert the hover state here
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: rgba(255, 255, 255, 0.2);
+
+          // Targeting the adjacent submenu to display
+          + .submenu {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; // Align submenu items to the left
+            padding-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content {
+  height: calc(100vh - 114px);
+  margin-top: 62px;
+}
+
+.portfolioLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.activePortfolioLink {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.submenu {
+  position: absolute;
+  background-color: var(--base-font-color);
+  flex-direction: column;
+  padding-top: 10px;
+  margin-top: 141%; // Position the submenu below the nav link
+  left: 0; // Align with the left side of the parent link
+  width: 220px;
+  z-index: 1001;
+  border: none;
+  display: none;
+
+  a.submenuItem {
+    border: none;
+    padding-bottom: 10px;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+// Show the submenu when the Portfolio link is active or on hover
+.navLinks a:hover + .submenu,
+.navLinks a:focus + .submenu,
+.navLinks a:active + .submenu {
+  display: flex;
+}

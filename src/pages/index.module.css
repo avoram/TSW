@@ -1,8 +1,6 @@
 /* src/pages/index.module.css */
 .homepageWrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100%;
   flex-direction: column; /* Align content vertically */
 }

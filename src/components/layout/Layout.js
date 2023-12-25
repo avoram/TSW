@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'gatsby';
-import '../../../styles/global.scss';
-import * as styles from './Layout.module.css';
-import Scroll from 'react-scroll';
-import { useLocation } from '@reach/router';
-import Footer from '../footer/Footer'; 
+import React, { useEffect, useState } from "react";
+import { Link } from "gatsby";
+import "../../../styles/global.scss";
+import * as styles from "./Layout.module.scss";
+import Scroll from "react-scroll";
+import { useLocation } from "@reach/router";
+import Footer from "../footer/Footer";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Layout = ({ children, logoClicked }) => {
-  const [activeLink, setActiveLink] = useState('');
+  const [activeLink, setActiveLink] = useState("");
   const [tswLogoClicked, setTswLogoClicked] = useState(false);
   const location = useLocation();
 
@@ -16,47 +17,63 @@ const Layout = ({ children, logoClicked }) => {
       const ScrollLink = Scroll.Link;
       ScrollLink.defaultProps = { ...ScrollLink.defaultProps, duration: 500 };
 
-      if (typeof window !== 'undefined') {
-        const shouldScrollToPortfolio = window.sessionStorage.getItem('shouldScrollToPortfolio');
-        if (!shouldScrollToPortfolio && window.location.hash === '#portfolio') {
-          const element = document.getElementById('portfolio');
+      if (typeof window !== "undefined") {
+        const shouldScrollToPortfolio = window.sessionStorage.getItem(
+          "shouldScrollToPortfolio"
+        );
+        if (!shouldScrollToPortfolio && window.location.hash === "#portfolio") {
+          const element = document.getElementById("portfolio");
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            setActiveLink('portfolio');
+            element.scrollIntoView({ behavior: "smooth" });
+            setActiveLink("portfolio");
           }
         } else {
           const pathname = location.pathname;
-          setActiveLink(pathname === '/' ? 'home' : pathname.replace('/', ''));
+          setActiveLink(pathname === "/" ? "home" : pathname.replace("/", ""));
         }
 
-        window.sessionStorage.removeItem('shouldScrollToPortfolio');
+        window.sessionStorage.removeItem("shouldScrollToPortfolio");
       }
     }, 100);
   }, [location.pathname]);
 
   // Check if the current page is the portfolio page
-  const isPortfolioPage = location.pathname === '/portfolio/';
+  const isPortfolioPage = location.pathname === "/portfolio/";
 
   return (
     <>
       <header className={styles.header}>
+        <Link to="/" className={styles.logoLink}>
+          <div className={styles.logoContainer}>
+            <StaticImage
+              src="../../images/tsw.png"
+              alt="Logo"
+              className={styles.logoImage}
+            />
+          </div>
+        </Link>
         <nav className={styles.navLinks}>
           <Link
             to="/"
-            getProps={({ isCurrent }) => (isCurrent ? { className: styles.activeLink } : {})}
-            onClick={() => setActiveLink('home')}
+            getProps={({ isCurrent }) =>
+              isCurrent ? { className: styles.activeLink } : {}
+            }
+            onClick={() => setActiveLink("home")}
           >
             Home
           </Link>
           <Link
             to="/portfolio"
-            onMouseEnter={() => setActiveLink('portfolio')}
-            onMouseLeave={() => setActiveLink('')}
+            onMouseEnter={() => setActiveLink("portfolio")}
+            onMouseLeave={() => setActiveLink("portfolio")}
           >
             Portfolio
-            {activeLink === 'portfolio' && (
+            {activeLink === "portfolio" && (
               <div className={styles.submenu}>
-                <Link to="/portfolio/residential" className={styles.submenuItem}>
+                <Link
+                  to="/portfolio/residential"
+                  className={styles.submenuItem}
+                >
                   Residential
                 </Link>
                 <Link to="/portfolio/commercial" className={styles.submenuItem}>
@@ -69,18 +86,21 @@ const Layout = ({ children, logoClicked }) => {
             )}
           </Link>
 
-
           <Link
             to="/about"
-            getProps={({ isCurrent }) => (isCurrent ? { className: styles.activeLink } : {})}
-            onClick={() => setActiveLink('about')}
+            getProps={({ isCurrent }) =>
+              isCurrent ? { className: styles.activeLink } : {}
+            }
+            onClick={() => setActiveLink("about")}
           >
             About
           </Link>
           <Link
             to="/contact"
-            getProps={({ isCurrent }) => (isCurrent ? { className: styles.activeLink } : {})}
-            onClick={() => setActiveLink('contact')}
+            getProps={({ isCurrent }) =>
+              isCurrent ? { className: styles.activeLink } : {}
+            }
+            onClick={() => setActiveLink("contact")}
           >
             Contact
           </Link>
@@ -88,10 +108,8 @@ const Layout = ({ children, logoClicked }) => {
       </header>
       <div className={styles.content}>{children}</div>
       {/* Conditionally render the footer */}
-      {!isPortfolioPage && (
-       <Footer></Footer>
-      )}
-   </>
+      {!isPortfolioPage && <Footer></Footer>}
+    </>
   );
 };
 
