@@ -60,13 +60,9 @@
         &:focus,
         &:active {
           background-color: rgba(255, 255, 255, 0.2);
-
           // Targeting the adjacent submenu to display
-          + .submenu {
+          .submenu {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start; // Align submenu items to the left
-            padding-top: 1rem;
           }
         }
       }
